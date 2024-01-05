@@ -1,9 +1,9 @@
 
 from django.contrib import admin
 from django.urls import path, include
-from myapp.views import hello_world
+from myapp.views import hello_world, hello, world
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("myapp/", include('myapp.urls') )
+    path("", include('myapp.urls') )
 ]
