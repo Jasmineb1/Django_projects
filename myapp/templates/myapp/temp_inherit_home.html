@@ -1,0 +1,31 @@
+
+{% extends 'myapp/base.html'%}
+
+
+{% block content%}
+    <h1>This is home page</h1>
+    Name: {{name}} <br>
+    Age: {{age}} <br>
+    Address: {{address}}
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">shop_location</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in items%}
+          <tr>
+            <th scope="row">{{ forloop.counter}}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.shop_location}}</td>
+            <td>{{ item.price}}</td>
+          </tr>
+          {% endfor%}
+        </tbody>
+      </table>
+{% endblock%}

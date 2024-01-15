@@ -1,0 +1,41 @@
+ORM stands for Object relational mapping
+it is a way to query the database without having to write the raw SQL queries
+some equivalent ORMs of SQL queries:
+=> INSERT into STUDENT(name, age, email) VALUES("ram", 20, "r@gmail.com")
+=>Students.object.create(name="ram", age=20, email="r@gmail.com")
+
+select students where id=1
+student.objects.filter(id=1)
+
+CRUD ORMs
+lets consider student as a model
+Create:
+Student.objects.create(name="", age"", address="")
+
+
+Querysets are lisrs like datatype but unlike list they are immutable
+querysets also supports index as in list but doesnt support negative indexing
+
+
+read:
+student.objects.all(): gives all the data of the student table
+student.objects.filter(id=1): returns queryset of the student whose id=1
+if filter is applied to non exixting data then it returns empty queryset
+
+student.objects.get(id=1): returns a simgle object 
+if get is applied to non existing data or multiple existing data then "object not found" error is returned
+
+
+Update:
+update is used to update data in a table
+this method can be used within a queryset but not in a simgle object
+student.objects.update(age=30)
+students.object.filter(address="ktm").update(age=30)
+students.object.filter(id=1).update(name=ram)
+
+
+Delete:
+delete() method is used to delete a row or multiple rows in a table
+this delete method can be used both in a queryset and object
+Student.objects.filter(address="ktm").delete()
+Student.objects.get(id=3).delete()

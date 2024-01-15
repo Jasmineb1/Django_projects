@@ -1,0 +1,17 @@
+There are 3 types of relations:
+1 one to one
+2 one to many
+3 many to many
+
+one to many:
+    if you have togroup a group of items in a same roof then use this.
+    for eg: menuCategory under menuitem, students under classroom , participants under same chatroom
+
+2. one to one relation:
+    if there is a unique relationship between tables
+    user and user table
+    one prime minister for one country similar to foreign key
+
+3. many to many:
+    if you have to link multiple objects of one table to multiple objects of another table
+    User and roles
