@@ -9,7 +9,7 @@ class Student(models.Model):  #class name becomes the table name later on: appna
     age= models.IntegerField()
     address= models.CharField(max_length=50)
     email= models.CharField(max_length=50)
-    classroom= models.ForeignKey(ClassRoom, on_delete= models.CASCADE, related_name="classroom_students")
+    classroom= models.ForeignKey(ClassRoom, on_delete= models.CASCADE, related_name="classroom_students", null= True, blank= True)
     
 
 

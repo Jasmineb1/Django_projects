@@ -6,6 +6,18 @@ There are 3 types of relations:
 one to many:
     if you have togroup a group of items in a same roof then use this.
     for eg: menuCategory under menuitem, students under classroom , participants under same chatroom
+    commands:
+    Student.objects.create(name="",age="",classroom=<obj>)
+    Student.objects.filter(id=1).update(classroom_id=2)
+
+    student= Student.objects.get(id=1)
+    student.classroom_id=3
+    student.save()
+    student.clasroom.name
+
+    #for relative name
+    classroom=ClassRoom.objects.get(id=1)
+    students= classroom.classroom_students.all()
 
 2. one to one relation:
     if there is a unique relationship between tables
