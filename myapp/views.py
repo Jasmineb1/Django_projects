@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Student
+from .models import Student, StudentProfile
 
 # Create your views here.
 def hello_world(request):
@@ -32,6 +32,11 @@ def home(request):
 
 def portfolio(request):
     return render(request, template_name='myapp/index.html')
+
+def student(request):
+    students= Student.objects.all()
+    sp= StudentProfile.objects.all()
+    return render(request, template_name='myapp/student.html', context={"students": students})
 
 def temp_inherit_home(request):
     items=[
