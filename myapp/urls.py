@@ -5,7 +5,7 @@ urlpatterns=[
     path("hello/", hello),
     path("world/",world),
     path("",home , name='home_page'),
-    path("home/", home),
+    path("home/", home, name="homepage"),
     path("portfolio/", portfolio, name='portfolio_page'),
     path("temp-inherit/", temp_inherit_home, name='temp_inherit_home'),
     path("features/", temp_inherit_features, name='temp_inherit_features'),

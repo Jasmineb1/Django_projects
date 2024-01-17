@@ -1,0 +1,58 @@
+{% extends 'myapp/base.html' %}
+
+{% block content%}
+    <h1>Add student</h1>
+    <form action="{% url 'add_student' %}" method="POST">
+        Name:
+        <input classname="Stdname">
+        <br>
+        Age:
+        <input classname="age">
+        <br>
+        Phone:
+        <input classname="phone">
+        <br>
+        Address:
+        <input classname="Address">
+        <br>
+        Email:
+        <input classname="email">
+        <br>
+        Bio:
+        <input classname="bio">
+        <br>
+        Roll_number:
+        <input classname="rollno">
+        <br>
+        <button class="btn btn-primary">Add Student</button>
+    </form>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">age</th>
+            <th scope="col">address</th>
+            <th scope="col">email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">bio</th>
+            <th scope="col">roll_no</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for student in students%}
+          <tr>
+            <th scope="row">{{ forloop.counter}}</th>
+            
+            <td>{{ student.name }}</td>
+            <td>{{ student.age}}</td>
+            <td>{{ student.address}}</td>
+            <td>{{ student.email}}</td>
+            <td>{{ student.studentprofile.phone}}</td>
+            <td>{{ student.studentprofile.bio}}</td>
+            <td>{{ student.studentprofile.roll_no}}</td>
+          </tr>
+          {% endfor%}
+        </tbody>
+      </table>
+{% endblock%}
